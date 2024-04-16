@@ -1,0 +1,46 @@
+Установить вручную Python (https://www.python.org/downloads/), при установке ставим обе галочки
+
+Скачать Tesseract-OCR с русским языковым пакетом (https://github.com/UB-Mannheim/tesseract/wiki)
+
+
+Зайти в директорию проекта через командную строку и выполнить следующие команды
+
+
+python -m venv venv
+
+.\\venv\Scripts\activate.bat
+
+pip install tesseract
+
+pip install pytesseract
+
+pip install telebot
+
+pip install gspread
+
+pip install pillow
+
+pip install -r requirements.txt
+
+
+Войти в Google Cloud Console 
+
+Создать сервисный аккаунт и создать json для входа в аккаунт
+
+В настройках таблицы указать доступ (Для всех у кого есть ссылка, роль Редактор)
+
+Открыть im2txt.py и указать вручную токен бота(создается в BotFather один раз),
+id таблицы (пример: https://docs.google.com/spreadsheets/d/1wBfU5w-BzUox0BQx4INU09uhCLYFRgHo6SuqK2z9_Mw/edit#gid=0, в данном случае id это 1wBfU5w-BzUox0BQx4INU09uhCLYFRgHo6SuqK2z9_Mw),
+путь до tesseract-ocr и языкового пакета,
+путь до json с данными для входа.
+
+Когда все готово можно запускать бота выполнив команду
+
+python im2txt.py
+
+При дальнейшем запуске необходимо просто перейти в директорию через командную строку, при необходимости отредактировать айди таблицы,
+в которую необходимо вносить данные и выполнить 
+
+.\\venv\Scripts\activate.bat
+
+python im2txt.py
